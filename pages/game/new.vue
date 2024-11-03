@@ -1,15 +1,24 @@
 <template>
-  <div class="page-container">
-    <div class="top-section">
-      <h1 class="welcome-message">New Game</h1>
-    </div>
-    <div class="mid-section">
-      <h1 class="welcome-message">New Game</h1>
-    </div>
-    <div class="bottom-section">
-      <nuxt-link to="/">
-        <button class="menu-button">Back to Home</button>
-      </nuxt-link>
+  <div class="page">
+    <div class="horizontal-container">
+      <div class="child top">
+        <TitleText message="Create new game!" width="80%" height="50%" />
+      </div>
+      <div class="child mid">
+        <div class="vertical-container">
+          <div class="child">
+            <TitleText message="Add players" />
+          </div>
+          <div class="child">
+            <TitleText message="Choose settings" />
+          </div>
+        </div>
+      </div>
+      <div class="child bottom">
+        <nuxt-link to="/">
+          <button class="menu-button">Back to Home</button>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -18,36 +27,17 @@
 
 <style scoped>
 @import url("~/assets/menu_button.css");
+@import url("~/assets/css/container.css");
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
+.child.top {
+  flex: 20%;
 }
 
-.top-section {
-  flex: 20%; /* Takes up 2/3 of the height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-.mid-section {
-  flex: 60%; /* Takes up 1/3 of the height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.child.mid {
+  flex: 60%;
 }
 
-.bottom-section {
-  flex: 20%; /* Takes up 1/3 of the height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.welcome-message {
-  font-size: 2rem;
-  text-align: center;
+.child.bottom {
+  flex: 20%;
 }
 </style>

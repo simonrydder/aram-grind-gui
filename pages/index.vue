@@ -1,18 +1,17 @@
 <template>
-  <div class="container">
-    <!-- <div>
-      <ViewportWidthLabel />
-    </div> -->
-    <div class="top-section">
-      <WelcomeText />
-    </div>
-    <div class="bottom-section">
-      <NuxtLink to="/game/new">
-        <button class="menu-button" @click="newGame">New Game</button>
-      </NuxtLink>
-      <NuxtLink to="/game/load">
-        <button class="menu-button" @click="loadGame">Load Game</button>
-      </NuxtLink>
+  <div class="page">
+    <div class="horizontal-container">
+      <div class="child">
+        <TitleText message="Welcome to ARAM Grind!" />
+      </div>
+      <div class="child buttons-container">
+        <NuxtLink to="/game/new">
+          <button class="menu-button" @click="newGame">New Game</button>
+        </NuxtLink>
+        <NuxtLink to="/game/load">
+          <button class="menu-button" @click="loadGame">Load Game</button>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -29,33 +28,9 @@ const loadGame = () => {
 
 <style scoped>
 @import url("~/assets/menu_button.css");
+@import url("~/assets/css/container.css");
 
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
-}
-
-.top-section {
-  flex: 1; /* Takes up 2/3 of the height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  text-align: center;
-}
-
-.bottom-section {
-  flex: 1; /* Takes up 1/3 of the height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.child.buttons-container {
   gap: 15%; /* Space between buttons */
-}
-
-.welcome-message {
-  /* max-width: 80%; */
-  font-size: calc(7vw + 5px); /* Responsive scaling of font size */
-  white-space: nowrap; /* Prevent line breaks */
 }
 </style>
