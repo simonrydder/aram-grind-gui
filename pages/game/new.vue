@@ -7,10 +7,10 @@
       <div class="child mid">
         <div class="vertical-container">
           <div class="child">
-            <TitleText message="Add players" />
+            <AddPlayers></AddPlayers>
           </div>
           <div class="child">
-            <TitleText message="Choose settings" />
+            <AddPlayers></AddPlayers>
           </div>
         </div>
       </div>
