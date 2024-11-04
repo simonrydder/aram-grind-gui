@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 const props = defineProps({
   message: {
@@ -27,35 +27,18 @@ const props = defineProps({
 
 const welcomeText = ref(null);
 
-const adjustFontSize = () => {
-  const element = welcomeText.value;
-  if (!element) return;
-
-  const parentWidth = element.clientWidth;
-  const parentHeight = element.clientHeight;
-  let fontSize = 10; // Start with a small font size
-  element.style.fontSize = `${fontSize}px`;
-
-  // Increase font size until it overflows the container
-  while (
-    element.scrollWidth <= parentWidth &&
-    element.scrollHeight <= parentHeight
-  ) {
-    fontSize += 1;
-    element.style.fontSize = `${fontSize}px`;
-  }
-
-  // Reduce font size by one step to prevent overflow
-  fontSize -= 1;
-  element.style.fontSize = `${fontSize}px`;
-};
-
-onMounted(adjustFontSize);
-watch(() => props.message, adjustFontSize); // Re-run when the message changes
-
 onMounted(() => {
-  window.addEventListener("resize", adjustFontSize);
+  adjustFontSize(welcomeText.value);
+  window.addEventListener("resize", () => adjustFontSize(welcomeText.value));
 });
+
+// Re-run when the message changes
+watch(
+  () => props.message,
+  () => {
+    adjustFontSize(welcomeText.value);
+  }
+);
 </script>
 
 <style scoped>
@@ -66,6 +49,6 @@ onMounted(() => {
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
-  border: solid black;
+  /* border: solid black; */
 }
 </style>

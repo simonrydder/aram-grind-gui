@@ -10,7 +10,7 @@
             <AddPlayers></AddPlayers>
           </div>
           <div class="child">
-            <AddPlayers></AddPlayers>
+            <ChooseSettings></ChooseSettings>
           </div>
         </div>
       </div>
