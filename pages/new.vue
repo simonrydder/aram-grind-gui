@@ -15,9 +15,8 @@
         </div>
       </div>
       <div class="child bottom">
-        <nuxt-link to="/">
-          <button class="menu-button">Back to Home</button>
-        </nuxt-link>
+        <MenuButton title="Back" to="/"></MenuButton>
+        <MenuButton title="Start" to="/game"></MenuButton>
       </div>
     </div>
   </div>
@@ -26,7 +25,6 @@
 <script setup></script>
 
 <style scoped>
-@import url("~/assets/menu_button.css");
 @import url("~/assets/css/container.css");
 
 .child.top {
@@ -39,5 +37,6 @@
 
 .child.bottom {
   flex: 20%;
+  gap: 25%;
 }
 </style>

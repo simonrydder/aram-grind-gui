@@ -5,12 +5,8 @@
         <TitleText message="Welcome to ARAM Grind!" />
       </div>
       <div class="child buttons-container">
-        <NuxtLink to="/game/new">
-          <button class="menu-button" @click="newGame">New Game</button>
-        </NuxtLink>
-        <NuxtLink to="/game/load">
-          <button class="menu-button" @click="loadGame">Load Game</button>
-        </NuxtLink>
+        <MenuButton title="New game" to="/new"></MenuButton>
+        <MenuButton title="Load game" to="/load"></MenuButton>
       </div>
     </div>
   </div>
