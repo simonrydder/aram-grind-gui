@@ -16,9 +16,9 @@
 
 <script setup>
 import { onMounted, ref, watch } from "vue";
-import { usePlayersStore } from "~/stores/players";
+// import { usePlayersStore } from "~/stores/usePlayerStore";
 
-const store = usePlayersStore();
+// const store = usePlayersStore();
 
 const props = defineProps({
   index: Number,

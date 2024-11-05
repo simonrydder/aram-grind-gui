@@ -7,6 +7,7 @@
       <div class="child buttons-container">
         <MenuButton title="New game" to="/new"></MenuButton>
         <MenuButton title="Load game" to="/load"></MenuButton>
+        <MenuButton title="Test" to="/test"></MenuButton>
       </div>
     </div>
   </div>

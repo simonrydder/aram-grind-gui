@@ -5,7 +5,7 @@
         <TitleText message="Load game!" width="80%" height="50%" />
       </div>
       <div class="child mid">
-        <AddPlayers></AddPlayers>
+        <!-- <AddPlayers></AddPlayers> -->
       </div>
       <div class="child bottom">
         <MenuButton title="Back" to="/"></MenuButton>

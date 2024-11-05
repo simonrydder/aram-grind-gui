@@ -19,14 +19,14 @@
 </template>
 
 <script setup lang="ts">
-import { usePlayersStore } from "~/stores/players"; // Import the store
+// // import { usePlayersStore } from "~/stores/usePlayerStore"; // Import the store
 
-const componentsArray = Array.from({ length: 10 });
-const store = usePlayersStore(); // Access the store
+// const componentsArray = Array.from({ length: 10 });
+// // const store = usePlayersStore(); // Access the store
 
-const updateStore = () => {
-  console.log("Stored names:", store.names); // Log the stored names
-};
+// const updateStore = () => {
+//   console.log("Stored names:", store.names); // Log the stored names
+// };
 </script>
 
 <style scoped>
