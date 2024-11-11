@@ -6,21 +6,10 @@
     <div class="child component">
       <PlayerGrid></PlayerGrid>
     </div>
-    <div class="child add">
-      <button @click="updateStore">Update</button>
-    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import { usePlayerStore } from "~/stores/usePlayerStore"; // Import the store
-
-const store = usePlayerStore(); // Access the store
-
-const updateStore = () => {
-  console.log("Stored names:", store.names); // Log the stored names
-};
-</script>
+<script setup></script>
 
 <style scoped>
 @import url("~/assets/css/container.css");
@@ -35,11 +24,7 @@ const updateStore = () => {
 }
 
 .child.component {
-  flex: 80%;
-}
-
-.child.add {
-  flex: 10%;
+  flex: 90%;
 }
 
 .grid {

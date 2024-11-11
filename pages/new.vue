@@ -16,13 +16,29 @@
       </div>
       <div class="child bottom">
         <MenuButton title="Back" to="/"></MenuButton>
-        <MenuButton title="Start" to="/game"></MenuButton>
+        <MenuButton title="Start" @click="startGame"></MenuButton>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const playerStore = usePlayerStore();
+const router = useRouter();
+
+const startGame = () => {
+  // Validate player names using the store action
+  const isValid = playerStore.validateNames();
+
+  if (isValid) {
+    // If validation passes, navigate to /game
+    router.push("/game");
+  } else {
+    // If validation fails, show an alert or other feedback
+    // alert("Please ensure all player names are valid before starting the game.");
+  }
+};
+</script>
 
 <style scoped>
 @import url("~/assets/css/container.css");
@@ -37,6 +53,6 @@
 
 .child.bottom {
   flex: 20%;
-  gap: 25%;
+  gap: 15%;
 }
 </style>

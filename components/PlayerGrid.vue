@@ -17,6 +17,6 @@
   height: 90%;
   width: 90%;
   margin: auto;
-  border: solid black;
+  /* border: solid black; */
 }
 </style>
