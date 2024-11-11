@@ -23,12 +23,12 @@
 </template>
 
 <script setup>
-const playerStore = usePlayerStore();
+const nameStore = useNameStore();
 const router = useRouter();
 
 const startGame = () => {
   // Validate player names using the store action
-  const isValid = playerStore.validateNames();
+  const isValid = nameStore.validateNames();
 
   if (isValid) {
     // If validation passes, navigate to /game
