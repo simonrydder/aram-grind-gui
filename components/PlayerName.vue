@@ -21,7 +21,7 @@
 
 <script setup>
 import { computed, toRefs } from "vue";
-import { usePlayerStore } from "~/stores/usePlayerStore"; // Adjust path if necessary
+import { useNameStore } from "~/stores/useNameStore"; // Adjust path if necessary
 
 const props = defineProps({
   index: {
@@ -31,7 +31,7 @@ const props = defineProps({
 });
 
 // Access the player store and define local refs for computed properties
-const playerStore = usePlayerStore();
+const playerStore = useNameStore();
 const { index } = toRefs(props);
 
 // Reactive reference to the name from the store

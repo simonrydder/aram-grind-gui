@@ -1,7 +1,7 @@
-// stores/layerStore.js
+// stores/useNameStore.js
 import { defineStore } from "pinia";
 
-export const usePlayerStore = defineStore("player", {
+export const useNameStore = defineStore("name", {
   state: () => ({
     names: Array(10).fill(""), // Initialize an array of 10 empty strings
   }),
