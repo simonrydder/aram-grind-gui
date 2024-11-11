@@ -26,12 +26,4 @@
 .child.component {
   flex: 90%;
 }
-
-.grid {
-  display: grid;
-  width: 90%;
-  height: 90%;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5%;
-}
 </style>
