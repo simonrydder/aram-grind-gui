@@ -7,7 +7,7 @@
       <div class="child mid">
         <div class="vertical-container">
           <div class="child">
-            <!-- <AddPlayers></AddPlayers> -->
+            <AddPlayers></AddPlayers>
           </div>
           <div class="child">
             <ChooseSettings></ChooseSettings>

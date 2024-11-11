@@ -1,10 +1,11 @@
+<!-- NameLabel.vue -->
 <template>
   <div class="name-label">
     <input
       ref="inputElement"
       type="text"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      :value="name"
+      @input="$emit('update:name', $event.target.value)"
       :placeholder="isDisabled ? '' : placeholder"
       :disabled="isDisabled"
       class="label-input"
@@ -17,7 +18,7 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 import { setFontSize } from "~/composables/setFontSize";
 
 const props = defineProps({
-  modelValue: {
+  name: {
     type: String,
     required: true,
   },
@@ -37,10 +38,10 @@ const inputElement = ref(null);
 // Recalculate font size on mount
 onMounted(() => {
   // Set the initial font size
-  setFontSize(inputElement.value, 0.8);
+  setFontSize(inputElement.value, 0.5);
 
   // Add a resize event listener to the window
-  const resizeHandler = () => setFontSize(inputElement.value, 0.8);
+  const resizeHandler = () => setFontSize(inputElement.value, 0.5);
   window.addEventListener("resize", resizeHandler);
 
   // Cleanup the event listener when the component is unmounted

@@ -4,13 +4,7 @@
       <TitleText message="Add players" height="80%"></TitleText>
     </div>
     <div class="child component">
-      <div class="grid">
-        <Player
-          v-for="(item, index) in componentsArray"
-          :key="index"
-          :index="index"
-        />
-      </div>
+      <PlayerGrid></PlayerGrid>
     </div>
     <div class="child add">
       <button @click="updateStore">Update</button>
@@ -19,14 +13,13 @@
 </template>
 
 <script setup lang="ts">
-// // import { usePlayersStore } from "~/stores/usePlayerStore"; // Import the store
+import { usePlayerStore } from "~/stores/usePlayerStore"; // Import the store
 
-// const componentsArray = Array.from({ length: 10 });
-// // const store = usePlayersStore(); // Access the store
+const store = usePlayerStore(); // Access the store
 
-// const updateStore = () => {
-//   console.log("Stored names:", store.names); // Log the stored names
-// };
+const updateStore = () => {
+  console.log("Stored names:", store.names); // Log the stored names
+};
 </script>
 
 <style scoped>
