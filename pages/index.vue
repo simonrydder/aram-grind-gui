@@ -5,7 +5,7 @@
         <TitleText message="Welcome to ARAM Grind!" />
       </div>
       <div class="child buttons-container">
-        <MenuButton title="New game" to="/new"></MenuButton>
+        <MenuButton title="New" @click="newGame"></MenuButton>
         <MenuButton title="Load game" to="/load"></MenuButton>
         <MenuButton title="Test" to="/test"></MenuButton>
       </div>
@@ -14,8 +14,30 @@
 </template>
 
 <script setup>
-const newGame = () => {
-  // Functionality for new game will be implemented later
+const router = useRouter();
+
+const {
+  public: { apiBaseUrl },
+} = useRuntimeConfig();
+
+const newGame = async () => {
+  try {
+    const response = await fetch(`${apiBaseUrl}/new`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: null,
+    });
+
+    if (!response.ok) {
+      console.log("test");
+      throw new Error("Failed to initialize game");
+    }
+    console.log(response);
+    router.push("/new");
+    return response;
+  } catch (error) {
+    alert("Error initializing new game");
+  }
 };
 
 const loadGame = () => {

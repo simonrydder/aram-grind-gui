@@ -4,5 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@pinia/nuxt", // Add Pinia module here
+    // "@nuxtjs/proxy",
   ],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || "http://localhost:8000",
+    },
+  },
 });
