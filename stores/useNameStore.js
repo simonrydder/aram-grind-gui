@@ -1,5 +1,6 @@
 // stores/useNameStore.js
 import { defineStore } from "pinia";
+import { callApi } from "~/composables/api";
 const {
   public: { apiBaseUrl },
 } = useRuntimeConfig();
@@ -60,27 +61,15 @@ export const useNameStore = defineStore("name", {
       return true;
     },
     async addPlayers() {
-      try {
-        const response = await fetch(`${apiBaseUrl}/new/add_players`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(this.getNonEmptyNames),
-        });
+      const nonEmptyNames = this.getNonEmptyNames;
 
-        if (!response.ok) {
-          throw new Error("Failed to add players");
-        }
-        // If successful, return true or perform any other logic you need
-        return true;
-      } catch (error) {
-        console.error("Error sending player names to the API:", error);
-        alert(
-          "Error sending player names to the API. Please check your connection."
-        );
-        return false;
-      }
+      const apiCall = await callApi(
+        "/new/add_players",
+        "POST",
+        nonEmptyNames,
+        "Failed to add players"
+      );
+      return apiCall;
     },
   },
 });

@@ -21,22 +21,15 @@ const {
 } = useRuntimeConfig();
 
 const newGame = async () => {
-  try {
-    const response = await fetch(`${apiBaseUrl}/new`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: null,
-    });
+  const response = await callApi(
+    "/new",
+    "POST",
+    null,
+    "Failed to initialize game"
+  );
 
-    if (!response.ok) {
-      console.log("test");
-      throw new Error("Failed to initialize game");
-    }
-    console.log(response);
+  if (response) {
     router.push("/new");
-    return response;
-  } catch (error) {
-    alert("Error initializing new game");
   }
 };
 

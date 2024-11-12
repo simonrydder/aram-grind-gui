@@ -27,14 +27,13 @@ const nameStore = useNameStore();
 const router = useRouter();
 
 const startGame = async () => {
-  // Validate player names using the store action
   const isValid = nameStore.validateNames();
 
   if (isValid) {
-    const success = await nameStore.addPlayers(); // If valid, try adding players
+    const response = await nameStore.addPlayers();
+    console.log("HERE");
 
-    if (success) {
-      // If the player names were successfully added, navigate to /game
+    if (response) {
       router.push("/game");
     }
   }
