@@ -11,4 +11,5 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE_URL || "http://localhost:8000",
     },
   },
+  css: ["@/assets/css/global.css", "@/assets/css/container.css"],
 });

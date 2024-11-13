@@ -1,7 +1,9 @@
 <template>
   <div class="page">
     <div class="horizontal-container">
-      <div class="child top"></div>
+      <div class="child top">
+        <ChampionView></ChampionView>
+      </div>
       <div class="child bottom"></div>
     </div>
   </div>
@@ -10,15 +12,13 @@
 <script setup></script>
 
 <style scoped>
-@import url("~/assets/css/container.css");
-
 .child.top {
-  /* flex: 40%; */
-  border: green solid;
+  /* border: green solid; */
+  overflow: hidden;
 }
 
 .child.bottom {
-  /* flex: 60%; */
-  border: red solid;
+  border-color: red;
+  /* border-style: solid; */
 }
 </style>

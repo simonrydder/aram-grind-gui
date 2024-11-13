@@ -1,3 +1,4 @@
+// composables/adjustFontSize.js
 export const adjustFontSize = (element) => {
   if (!element) return;
 
@@ -16,6 +17,6 @@ export const adjustFontSize = (element) => {
   }
 
   // Reduce font size by one step to prevent overflow
-  fontSize -= 1;
+  fontSize -= 2;
   element.style.fontSize = `${fontSize}px`;
 };

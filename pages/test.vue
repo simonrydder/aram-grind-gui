@@ -1,15 +1,18 @@
-<!-- test.vue -->
 <template>
   <div class="page">
-    <PlayerGrid></PlayerGrid>
+    <ChampionView></ChampionView>
   </div>
 </template>
 
-<style scope>
+<script setup></script>
+
+<style scoped>
 @import url("~/assets/css/container.css");
 
 .page {
-  width: 50vw;
-  height: 60vh;
+  width: 99vw;
+  height: 50vh;
+  /* border: solid black; */
+  overflow: auto;
 }
 </style>

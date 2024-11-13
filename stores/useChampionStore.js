@@ -11,16 +11,12 @@ export const useChampionStore = defineStore("champion", {
   }),
   actions: {
     async fetchChampions() {
-      try {
-        const response = await fetch(`${apiBaseUrl}/game/champions`);
-        if (response.ok) {
-          this.champions = await response.json();
-        } else {
-          console.error("Failed to fetch champions:", response.statusText);
-        }
-      } catch (error) {
-        console.error("Error fetching champions:", error);
-      }
+      this.champions = await callApi(
+        "/game/champions",
+        "GET",
+        null,
+        "Failed to fetch champions."
+      );
     },
   },
 });
