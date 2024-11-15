@@ -50,7 +50,6 @@ onMounted(() => {
 <style scoped>
 .champion-display {
   aspect-ratio: 1 / 1;
-  border: 1px solid black;
   position: relative;
   box-sizing: border-box;
 }
@@ -58,7 +57,7 @@ onMounted(() => {
 .champion-square-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .champion-square-image.unavailable {
@@ -80,6 +79,7 @@ onMounted(() => {
   box-sizing: border-box;
   overflow-wrap: anywhere; /* Allow words to break and wrap */
   white-space: normal; /* Allow text to wrap naturally */
+  border: 1px solid black;
 }
 
 .champion-square-text.unavailable {
