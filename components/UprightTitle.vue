@@ -69,12 +69,13 @@ watchEffect(() => {
 
 <style scoped>
 .name-container {
-  width: 5vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* border: red solid; */
 }
 
 .name-text {
