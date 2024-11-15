@@ -1,18 +1,13 @@
 <template>
-  <div class="page">
-    <ChampionView></ChampionView>
-  </div>
+  <div class="test-page"></div>
 </template>
 
 <script setup></script>
 
 <style scoped>
-@import url("~/assets/css/container.css");
-
-.page {
-  width: 99vw;
-  height: 50vh;
-  /* border: solid black; */
-  overflow: auto;
+.test-page {
+  display: flex;
+  width: 98vw;
+  height: 98vh;
 }
 </style>
