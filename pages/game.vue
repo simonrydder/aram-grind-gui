@@ -1,10 +1,13 @@
 <template>
   <div class="page">
-    <div class="horizontal-container">
+    <div class="column-split">
       <div class="child top">
         <ChampionView></ChampionView>
       </div>
-      <div class="child bottom"></div>
+      <div class="child bottom">
+        <!-- <ChampionView></ChampionView> -->
+        <div>Something</div>
+      </div>
     </div>
   </div>
 </template>
@@ -13,12 +16,10 @@
 
 <style scoped>
 .child.top {
-  /* border: green solid; */
-  overflow: hidden;
+  max-height: 50%;
 }
 
 .child.bottom {
-  border-color: red;
-  /* border-style: solid; */
+  max-height: 50%;
 }
 </style>
