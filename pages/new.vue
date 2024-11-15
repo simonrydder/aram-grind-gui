@@ -1,11 +1,11 @@
 <template>
   <div class="page">
-    <div class="horizontal-container">
+    <div class="column-split">
       <div class="child top">
         <TitleText message="Create new game!" width="80%" height="50%" />
       </div>
       <div class="child mid">
-        <div class="vertical-container">
+        <div class="row-split">
           <div class="child">
             <AddPlayers></AddPlayers>
           </div>

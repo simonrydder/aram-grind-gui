@@ -1,6 +1,6 @@
 <!-- PlayerName.vue -->
 <template>
-  <div class="vertical-container">
+  <div class="row-split">
     <div class="child label">
       <!-- NameLabel component for name input -->
       <NameLabel
@@ -66,7 +66,7 @@ const clearName = () => {
 <style scoped>
 @import url("~/assets/css/container.css");
 
-.vertical-container {
+.row-split {
   /* border: solid red; */
   gap: 2%;
 }

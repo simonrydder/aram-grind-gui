@@ -1,21 +1,22 @@
 .page {
   display: flex;
   height: 98vh;
-  width: 98vw;
+  width: 99vw;
 }
 
-.vertical-container {
+.row-split {
   display: flex;
   flex-direction: row;
   height: 100%;
   width: 100%;
 }
 
-.horizontal-container {
+.column-split {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  padding: auto;
 }
 
 .child {

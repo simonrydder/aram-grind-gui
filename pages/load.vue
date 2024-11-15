@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="horizontal-container">
+    <div class="column-split">
       <div class="child top">
         <TitleText message="Load game!" width="80%" height="50%" />
       </div>

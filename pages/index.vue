@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="horizontal-container">
+    <div class="column-split">
       <div class="child">
         <TitleText message="Welcome to ARAM Grind!" />
       </div>

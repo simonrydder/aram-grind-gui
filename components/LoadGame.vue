@@ -1,5 +1,5 @@
 <template>
-  <div class="horizontal-container">
+  <div class="column-split">
     <div class="child title">
       <TitleText message="Add players" height="80%"></TitleText>
     </div>
@@ -12,7 +12,7 @@
 <style scoped>
 @import url("~/assets/css/container.css");
 
-.horizontal-container {
+.column-split {
   border: solid green;
 }
 
