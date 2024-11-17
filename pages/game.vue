@@ -5,8 +5,11 @@
         <ChampionView></ChampionView>
       </div>
       <div class="child bottom">
-        <!-- <ChampionView></ChampionView> -->
-        <div>Something</div>
+        <div class="row-split">
+          <div class="child left"></div>
+          <div class="child middel"></div>
+          <div class="child right"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -16,10 +19,27 @@
 
 <style scoped>
 .child.top {
-  max-height: 50%;
+  flex: 4;
+  max-height: 40%;
 }
 
 .child.bottom {
-  max-height: 50%;
+  flex: 6;
+  max-height: 60%;
+}
+
+.child.left {
+  flex: 1;
+  border: red solid;
+}
+
+.child.middel {
+  flex: 3;
+  border: blue solid;
+}
+
+.child.right {
+  flex: 1;
+  border: green solid;
 }
 </style>
