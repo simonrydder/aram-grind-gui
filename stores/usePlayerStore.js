@@ -7,7 +7,7 @@ const {
 
 export const usePlayerStore = defineStore("player", {
   state: () => ({
-    players: Array(10).fill(null),
+    players: Array(10).fill({ name: "", score: 0 }),
   }),
   getters: {
     getPlayerByIndex: (state) => {

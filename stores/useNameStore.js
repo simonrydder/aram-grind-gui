@@ -69,6 +69,7 @@ export const useNameStore = defineStore("name", {
         nonEmptyNames,
         "Failed to add players"
       );
+      console.log("Players added:", this.names);
       return apiCall;
     },
   },

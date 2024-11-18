@@ -17,18 +17,21 @@
 <style scoped>
 .border {
   border: black solid;
-  border-top: black solid;
   width: 100%;
-  height: 95%;
-  padding: 10px;
-  padding-bottom: 0px;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .child.title {
+  padding-top: 10px;
   flex: 5%;
 }
 
 .child.grid {
+  padding-top: 10px;
   flex: 95%;
 }
 </style>

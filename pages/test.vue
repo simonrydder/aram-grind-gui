@@ -22,11 +22,18 @@ const playerStore = usePlayerStore();
 const nameStore = useNameStore();
 
 onMounted(() => {
-  nameStore.setNameByIndex(0, "Simon");
+  nameStore.setNameByIndex(0, "Danish and Tough");
   nameStore.setNameByIndex(1, "Eskild");
   nameStore.setNameByIndex(2, "Alex");
   nameStore.setNameByIndex(3, "Denze");
+  nameStore.setNameByIndex(4, "HH");
+  nameStore.setNameByIndex(5, "Danish");
+  // nameStore.setNameByIndex(6, "Eskild 2");
+  // nameStore.setNameByIndex(7, "Alex 2");
+  // nameStore.setNameByIndex(8, "Denze 2");
+  // nameStore.setNameByIndex(9, "HH 2");
   nameStore.addPlayers();
+  playerStore.fetchScoreboard();
 });
 </script>
 

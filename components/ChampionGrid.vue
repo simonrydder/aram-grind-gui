@@ -1,11 +1,12 @@
-<!-- components/ChampionGrid.vue -->
 <template>
-  <div :style="gridStyle" class="grid">
-    <ChampionDisplay
-      v-for="(champion, index) in championStore.champions"
-      :key="index"
-      :champion="champion"
-    ></ChampionDisplay>
+  <div class="grid-container">
+    <div :style="gridStyle" class="grid">
+      <ChampionDisplay
+        v-for="(champion, index) in championStore.champions"
+        :key="index"
+        :champion="champion"
+      ></ChampionDisplay>
+    </div>
   </div>
 </template>
 
@@ -18,14 +19,8 @@ const squareSize = 3.5; // in rem
 
 // Dynamically set the grid style
 const gridStyle = computed(() => ({
-  display: "grid",
-  width: "100%",
-  height: "100%",
-  gap: `10px`,
   gridTemplateColumns: `repeat(auto-fill, minmax(${squareSize}%, 1fr))`,
   gridAutoRows: `1fr`,
-  overflow: "scroll",
-  paddingRight: "10px",
 }));
 
 onMounted(() => {
@@ -34,9 +29,24 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* Minimalistic scrollbar styling */
+.grid-container {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  padding-right: 10px;
+  /* padding-bottom: 10px; */
+  overflow: scroll;
+}
+
 .grid::-webkit-scrollbar {
-  width: 8px; /* Customize the scrollbar width */
+  width: 7px; /* Customize the scrollbar width */
 }
 
 .grid::-webkit-scrollbar-thumb {
