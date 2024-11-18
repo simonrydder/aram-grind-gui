@@ -16,10 +16,6 @@
 <script setup>
 const router = useRouter();
 
-const {
-  public: { apiBaseUrl },
-} = useRuntimeConfig();
-
 const newGame = async () => {
   const response = await callApi(
     "/new",
