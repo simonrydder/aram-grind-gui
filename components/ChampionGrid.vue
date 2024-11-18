@@ -13,6 +13,7 @@
 <script setup>
 import { computed, onMounted } from "vue";
 const championStore = useChampionStore();
+const roundStore = useRoundStore();
 
 // Define the reactive size for each square (adjust as desired)
 const squareSize = 3.5; // in rem
@@ -26,6 +27,14 @@ const gridStyle = computed(() => ({
 onMounted(() => {
   championStore.fetchChampions();
 });
+
+watch(
+  () => roundStore.isActive,
+  (newValue, oldValue) => {
+    console.log(`Round active status changed: ${oldValue} -> ${newValue}`);
+    championStore.fetchChampions();
+  }
+);
 </script>
 
 <style scoped>

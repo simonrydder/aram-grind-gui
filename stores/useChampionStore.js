@@ -1,22 +1,23 @@
 // stores/useChampionStore.js
 import { defineStore } from "pinia";
 
-const {
-  public: { apiBaseUrl },
-} = useRuntimeConfig();
-
 export const useChampionStore = defineStore("champion", {
   state: () => ({
     champions: [],
   }),
   actions: {
     async fetchChampions() {
-      this.champions = await callApi(
+      const champions = await callApi(
         "/game/champions",
         "GET",
         null,
         "Failed to fetch champions."
       );
+
+      const sortedChampions = champions
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => b.available - a.available);
+      this.champions = sortedChampions;
     },
   },
 });

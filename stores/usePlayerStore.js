@@ -1,9 +1,6 @@
 // stores/usePlayerStore.js
 import { defineStore } from "pinia";
 import { callApi } from "~/composables/api";
-const {
-  public: { apiBaseUrl },
-} = useRuntimeConfig();
 
 export const usePlayerStore = defineStore("player", {
   state: () => ({

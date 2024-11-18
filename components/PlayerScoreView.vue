@@ -1,7 +1,7 @@
 <template>
   <div class="row-split">
     <div class="child rank" :style="{ fontSize: fontSize }">
-      {{ `${rank}.` }}
+      {{ `${rank}` }}
     </div>
     <div class="child name" :style="{ fontSize: fontSize }">
       {{ player.name }}
@@ -19,7 +19,7 @@ const props = defineProps({
     required: true,
   },
   rank: {
-    type: Number,
+    type: String,
     required: true,
   },
   fontSize: {

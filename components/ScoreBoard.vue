@@ -20,6 +20,7 @@ import { computed, onMounted } from "vue";
 import { usePlayerStore } from "~/stores/usePlayerStore";
 
 // Access player store
+const roundStore = useRoundStore();
 const playerStore = usePlayerStore();
 const fontSize = ref(`1rem`);
 const height = ref("100%");
@@ -34,8 +35,17 @@ const playerRanks = computed(() => {
     scoresSeen.add(player.score); // Add the score to the Set
     ranks[index] = scoresSeen.size; // Rank is based on unique scores seen so far
   });
-  console.log("Ranks:", ranks);
-  return ranks;
+
+  const strRanks = [];
+  ranks.forEach((rank, index) => {
+    if (index === 0 || rank !== ranks[index - 1]) {
+      strRanks[index] = `${rank}.`;
+    } else {
+      strRanks[index] = "-";
+    }
+  });
+
+  return strRanks;
 });
 
 const updateFontSizes = async () => {
@@ -46,7 +56,6 @@ const updateFontSizes = async () => {
   playerStore.players.forEach((player, index) => {
     fontSizes[index] = dynamicFontSize(player.name, clientWidth, clientHeight);
   });
-  console.log("FontSizes:", fontSizes);
   let minFontSize = Math.min(...fontSizes);
   fontSize.value = `${minFontSize}px` || "1rem";
   height.value = `${clientHeight}px`;
@@ -73,6 +82,14 @@ watch(
     updateFontSizes();
   },
   { deep: true }
+);
+
+watch(
+  () => roundStore.isActive,
+  (newValue, oldValue) => {
+    console.log(`Round active status changed: ${oldValue} -> ${newValue}`);
+    playerStore.fetchScoreboard();
+  }
 );
 </script>
 

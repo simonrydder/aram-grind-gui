@@ -1,9 +1,6 @@
 // stores/useNameStore.js
 import { defineStore } from "pinia";
 import { callApi } from "~/composables/api";
-const {
-  public: { apiBaseUrl },
-} = useRuntimeConfig();
 
 export const useNameStore = defineStore("name", {
   state: () => ({
