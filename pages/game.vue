@@ -9,45 +9,51 @@
           <div class="child left">
             <ScoreboardView></ScoreboardView>
           </div>
-          <div class="child middel"></div>
-          <div class="child right"></div>
+          <div class="child middel">
+            <TeamView :red="roundStore.red" :blue="roundStore.blue"></TeamView>
+          </div>
+          <div class="child right">
+            <GameButtonView></GameButtonView>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const playerStore = usePlayerStore();
+const roundStore = useRoundStore();
+
+onMounted(() => {
+  playerStore.fetchScoreboard();
+});
+</script>
 
 <style scoped>
-.column-split {
-  padding: 0;
-}
 .child.top {
   flex: 4;
   max-height: 40%;
-  max-width: 100%;
-  margin: 5px;
+  border: black solid;
 }
 
 .child.bottom {
   flex: 6;
-  max-width: 100%;
   max-height: 60%;
+  border: solid black;
+  border-top: none;
 }
 
 .child.left {
   flex: 1;
-  /* border: red solid; */
 }
 
 .child.middel {
-  flex: 3;
-  /* border: blue solid; */
+  flex: 4;
+  display: flex;
 }
 
 .child.right {
   flex: 1;
-  /* border: green solid; */
 }
 </style>

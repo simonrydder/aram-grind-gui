@@ -4,8 +4,8 @@ import { defineStore } from "pinia";
 export const useRoundStore = defineStore("round", {
   state: () => ({
     isActive: false, // Set default value to true or whatever your initial state is
-    red: {},
-    blue: {},
+    red: { players: [], champions: [], size: 0 },
+    blue: { players: [], champions: [], size: 0 },
   }),
   actions: {
     setActiveRound(value) {

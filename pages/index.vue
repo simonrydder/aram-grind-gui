@@ -7,7 +7,7 @@
       <div class="child buttons-container">
         <MenuButton title="New" @click="newGame"></MenuButton>
         <MenuButton title="Load game" to="/load"></MenuButton>
-        <MenuButton title="Test" @click="testGame"></MenuButton>
+        <!-- <MenuButton title="Test" @click="testGame"></MenuButton> -->
       </div>
     </div>
   </div>

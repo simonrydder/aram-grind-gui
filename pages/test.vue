@@ -10,8 +10,7 @@
             <ScoreboardView></ScoreboardView>
           </div>
           <div class="child middel">
-            <div>{{ roundStore.red }}</div>
-            <div>{{ roundStore.blue }}</div>
+            <TeamView :red="roundStore.red" :blue="roundStore.blue"></TeamView>
           </div>
           <div class="child right">
             <GameButtonView></GameButtonView>
@@ -64,7 +63,8 @@ onMounted(() => {
 
 .child.middel {
   flex: 4;
-  display: grid;
+  display: flex;
+  /* gap: 1%; */
   /* border: blue solid; */
 }
 
