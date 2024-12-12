@@ -14,6 +14,8 @@
         <FunctionalButton title="Exit" :func="exitClick"></FunctionalButton>
       </div>
     </div>
+    <!-- ConfirmExitGameModal -->
+    <ConfirmExitGameModal :visible="isModalVisible" @close="handleModalClose" />
   </div>
   <div v-else class="div">
     <div class="column-split">
@@ -37,15 +39,13 @@
 
 <script setup>
 const router = useRouter();
-
 const roundStore = useRoundStore();
+
+const isModalVisible = ref(false);
+
 const testClick = () => {
   console.log("TestClick");
   roundStore.setActiveRound(!roundStore.isActive);
-};
-
-const exitClick = () => {
-  router.push("/");
 };
 
 const saveClick = async () => {
@@ -66,6 +66,18 @@ const saveClick = async () => {
   );
 
   alert(response.message);
+};
+
+const exitClick = () => {
+  isModalVisible.value = true; // Show the modal
+};
+
+const handleModalClose = async (choice) => {
+  isModalVisible.value = false; // Hide the modal
+  if (choice) {
+    await saveClick(); // Save the game if the user chooses "Yes"
+  }
+  router.push("/"); // Exit the game
 };
 </script>
 
