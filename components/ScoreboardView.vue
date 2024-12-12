@@ -1,7 +1,7 @@
 <template>
   <div class="column-split">
     <div class="child title">
-      <TitleText message="Scoreboard" height="100%"></TitleText>
+      <TitleText message="Score" height="100%"></TitleText>
     </div>
     <div class="child board">
       <ScoreBoard></ScoreBoard>
