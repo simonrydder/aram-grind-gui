@@ -6,7 +6,7 @@
       </div>
       <div class="child buttons-container">
         <MenuButton title="New" @click="newGame"></MenuButton>
-        <MenuButton title="Load game" to="/load"></MenuButton>
+        <MenuButton title="Load game" @click="loadGame"></MenuButton>
         <!-- <MenuButton title="Test" @click="testGame"></MenuButton> -->
       </div>
     </div>
@@ -16,35 +16,23 @@
 <script setup>
 const router = useRouter();
 
+const initializeGame = async () => {
+  return await callApi("/new", "POST", null, "Failed to initialize game");
+};
 const newGame = async () => {
-  const response = await callApi(
-    "/new",
-    "POST",
-    null,
-    "Failed to initialize game"
-  );
+  const response = await initializeGame();
 
   if (response) {
     router.push("/new");
   }
 };
 
-const loadGame = () => {
-  // Functionality for load game will be implemented later
-};
-
-const testGame = async () => {
-  const response = await callApi(
-    "/new",
-    "POST",
-    null,
-    "Failed to initialize game"
-  );
+const loadGame = async () => {
+  const response = await initializeGame();
 
   if (response) {
-    router.push("/test");
+    router.push("/load");
   }
-  router.push("/test");
 };
 </script>
 
