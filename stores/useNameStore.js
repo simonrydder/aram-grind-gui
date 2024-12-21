@@ -4,7 +4,18 @@ import { callApi } from "~/composables/api";
 
 export const useNameStore = defineStore("name", {
   state: () => ({
-    names: Array(10).fill(""), // Initialize an array of 10 empty strings
+    names: [
+      "Blind",
+      "Denze",
+      "Simba",
+      "Sqash",
+      "Du3n",
+      "Danish",
+      "",
+      "",
+      "",
+      "",
+    ],
   }),
   getters: {
     getNameByIndex: (state) => {
