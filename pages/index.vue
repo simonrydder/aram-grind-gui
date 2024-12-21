@@ -16,6 +16,10 @@
 <script setup>
 const router = useRouter();
 
+onBeforeMount(() => {
+  resetStores();
+});
+
 const initializeGame = async () => {
   return await callApi("/new", "POST", null, "Failed to initialize game");
 };
