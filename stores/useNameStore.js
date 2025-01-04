@@ -7,7 +7,7 @@ export const useNameStore = defineStore("name", {
     names: [
       "Blind",
       "Denze",
-      "Simba",
+      "Zimba",
       "Sqash",
       "Du3n",
       "Danish",
